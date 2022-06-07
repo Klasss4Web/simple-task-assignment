@@ -62,7 +62,7 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
   const newTask = () => {
     setUser("")
     setDate("")
-    setTime("")
+    setTime(dayjs(Date.now()).format("hh:mm a"))
     setDescription("")
     setEdit(false)
   }
@@ -141,7 +141,7 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
                   <BiTimeFive />
                 </InputGroup.Text>
                 <select className="" disabled={disabled}  style={{height: "38px", width: "70%", border: "1px solid #c4c4c4", background: "#fff"}} onChange={(e)=>setTime(e.target.value)}>
-                  <option>{dayjs(time).format("hh:mm a")}</option>
+                  <option>{time}</option>
                 {
                   times?.map((time, i)=> {
                     return(

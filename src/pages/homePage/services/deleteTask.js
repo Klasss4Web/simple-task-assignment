@@ -5,15 +5,14 @@ export const deleteTask = async (user_id, company_id, task_id, setLoading, setRe
   try {
     const response = window.confirm("Are you sure you want to delete this task?")
     if (response) {
-      const data = await http.delete(AUTH_ROUTES.DELETE_SINGLE_TASK(company_id, user_id, task_id))
-    setLoading(false)
-    setRefresh(true)
-    console.log("Task deleted successfully", data)
+      // const data = 
+      await http.delete(AUTH_ROUTES.DELETE_SINGLE_TASK(company_id, user_id, task_id))
+    // console.log("Task deleted successfully", data)
   } else {
       console.log("Cancel was pressed");
-  }
-    
-    
+  }  
+  setLoading(false)
+    setRefresh(true)
     setShowTaskCard(true)
     setShowAddTaskForm(false)
   } catch (e) {

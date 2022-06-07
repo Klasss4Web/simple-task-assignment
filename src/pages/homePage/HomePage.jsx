@@ -18,11 +18,8 @@ export const HomePage = () => {
   const [loading, setLoading] = useState(true)
   const company_id = useSelector(state=>state.user.userData?.company_id)
   const [refresh, setRefresh] = useState(false)
-
+  //Hard coded user id because the user id from the token is not returning a valid response
   const user_id = "lead_465c14d0e99e4972b6b21ffecf3dd691"
-  const state = useSelector(state=>state)
-
-  console.log("state", state, "assigned-user", assignedUser, company_id, "allTask", allTask)
 
   useEffect(() => {
     getAssigtnedUser(company_id, setLoading, setAssignedUser)
