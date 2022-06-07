@@ -160,7 +160,6 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
             <option selected>{updatedname || "Please select an assignee"}</option>
           {
                 assignedUser?.map((data, i) => {
-                  console.log("ass", data)
                 return(
                   <option key={i} value={data?.id}>{data?.name}
                   </option>           
