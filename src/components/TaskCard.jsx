@@ -1,16 +1,16 @@
 import React from 'react'
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { MdModeEdit, MdNotificationAdd } from "react-icons/md"
 import { IoMdCheckmark } from "react-icons/io"
 import { useDispatch, useSelector } from 'react-redux';
 
-export const TaskCard = ({ task, setShowTaskCard, setShowAddTaskForm, addTaskToStore, setEdit, handleUpdate }) => {
+export const TaskCard = ({ task, setShowTaskCard, setShowAddTaskForm, addTaskToStore, setEdit, handleUpdate, loading }) => {
 
   const icon = useSelector(state=>state.user.userData?.icon)
 
   const dispatch = useDispatch()
   return (
-    <Card body key={task?.id}>
+    <Card body>
     <Row className="justify-content-between align-items-center">
       <Col lg="6">
         <Row className="justify-content-start">
@@ -37,7 +37,16 @@ export const TaskCard = ({ task, setShowTaskCard, setShowAddTaskForm, addTaskToS
           </Col>
           <Col lg="4">
           <div style={{ border: "1px solid #999", textAlign:"center", borderRadius: "3px"}} data-toggle="tooltip" data-placement="top" title="Mark as done">
+          {loading ? (<Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                 
+                  />): 
            <IoMdCheckmark cursor={"pointer"} onClick={()=>handleUpdate(1)} />
+           }
            </div>
           </Col>
         </Row>

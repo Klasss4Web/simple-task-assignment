@@ -86,7 +86,7 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
     // Sort the task data to allow the most recent one appear at the top
       totalTask?.sort((a, b) => convertTimeToSeconds(dayjs(b.created).format("hh:mm")) - convertTimeToSeconds(dayjs(a.created).format("hh:mm")))?.map((task) => {
         return(
-          <TaskCard task={task} key={task?.id} setShowTaskCard={setShowTaskCard} setEdit={setEdit}      addTaskToStore={addTaskToStore} setShowAddTaskForm={setShowAddTaskForm} handleUpdate={handleSubmit} />
+          <TaskCard task={task} key={task?.id} setShowTaskCard={setShowTaskCard} setEdit={setEdit} loading={loading} addTaskToStore={addTaskToStore} setShowAddTaskForm={setShowAddTaskForm} handleUpdate={handleSubmit} />
         )
       })
    }
