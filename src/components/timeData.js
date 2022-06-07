@@ -20,7 +20,7 @@ export const timeData = [
     value: "02:00"
   },
   {
-    time: "02:30 AM",
+    time: "02:30 am",
     value: "02:30"
   },
   {
