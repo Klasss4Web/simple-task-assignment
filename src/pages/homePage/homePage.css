@@ -1,0 +1,18 @@
+.add-task {
+  background: #ebfcfa !important;
+  border: 1px solid #f2f2f2;
+}
+
+.btn{
+  width: 90px;
+}
+
+.btn-save{
+  background: #3ba87c !important;
+}
+
+.btn-cancel {
+  color: grey !important;
+  background: inherit !important;
+  border: none !important;
+}
