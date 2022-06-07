@@ -25,7 +25,7 @@ export const Login = () => {
   return (
     <Row className="h-100 w-100 align-items-center justify-content-center">
       <Form className="p-5" style={{ width: "50%"}}>
-        <small style={{ color: "red", lineHeight: "-2" }}>Alert: Please note that the token for this app expires almost immediately, only on request can be performed per session. You might need to logout and login again to test other features... Thanks</small>
+        <small style={{ color: "red", lineHeight: "-2" }}>Alert: Please note that the token for this app expires almost immediately, only one request can be performed per session. You might need to logout and login again to test other features... Thanks</small>
         <h1>Login</h1>
         <Form.Group className="my-3" controlId="email">
           <Form.Label>Email address</Form.Label>

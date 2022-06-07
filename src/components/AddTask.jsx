@@ -60,10 +60,10 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
   }
 
   const newTask = () => {
-    setUser("")
-    setDate("")
+    // setUser("")
+    // setDate("")
     setTime(dayjs(Date.now()).format("hh:mm a"))
-    setDescription("")
+    // setDescription("")
     setEdit(false)
   }
 
@@ -168,8 +168,8 @@ export const AddTask = ({ times, assignedUser, setRefresh, totalTask=[] }) => {
             }
           </select>
           
-         <Row className={taskMsg  ? "justify-content-between" : "justify-content-end"}>
-          {taskMsg &&
+         <Row className={edit  ? "justify-content-between" : "justify-content-end"}>
+          {edit &&
            <Col>
               <MdDeleteForever size={26} cursor={"pointer"} onClick={()=>handleDelete()}/>
            </Col>
